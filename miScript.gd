@@ -18,9 +18,9 @@ func _process(delta):
 		posicion.x -= 10
 	if(Input.is_key_pressed(KEY_RIGHT)):
 		posicion.x += 10
-	if(Input.is_key_pressed(KEY_UP)): #Arriba es hacia abajo
+	if(Input.is_key_pressed(KEY_UP) && posicion.y > 246): #Arriba es hacia abajo
 		posicion.y -= 3
-	if(Input.is_key_pressed(KEY_DOWN)):
+	if(Input.is_key_pressed(KEY_DOWN) && posicion.y < 462):
 		posicion.y += 3
 	get_node("Diego").set_pos(posicion)
 	zoom()
