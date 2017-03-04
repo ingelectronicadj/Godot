@@ -4,19 +4,23 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 var posicion
+var diego
+var tamano
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	#posicion = get_pos()
+	diego = get_node("Diego")
 	posicion = get_node("Diego").get_pos()
 	set_process(true)
 	pass
 
 func _process(delta):
-	if(Input.is_key_pressed(KEY_LEFT)):
+	tamano = diego.get_item_rect().size * diego.get_scale()
+	if(Input.is_key_pressed(KEY_LEFT) && posicion.x > tamano.width * 0.5):
 		posicion.x -= 10
-	if(Input.is_key_pressed(KEY_RIGHT)):
+	if(Input.is_key_pressed(KEY_RIGHT) && posicion.x < OS.get_window_size().width - tamano.width*0.5):
 		posicion.x += 10
 	if(Input.is_key_pressed(KEY_UP) && posicion.y > 246): #Arriba es hacia abajo
 		posicion.y -= 3
@@ -24,7 +28,7 @@ func _process(delta):
 		posicion.y += 3
 	get_node("Diego").set_pos(posicion)
 	zoom()
-	
+
 func zoom():
 	var escala=0.0066*posicion.y - 1.06637
 	var vect = Vector2(escala,escala)

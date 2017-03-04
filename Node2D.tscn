@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://miScript.gd" type="Script" id=1]
 [ext_resource path="res://fondoCastillo.jpg" type="Texture" id=2]
 [ext_resource path="res://adventurer_hold2.png" type="Texture" id=3]
+[ext_resource path="res://diego.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,5 +20,39 @@ texture = ExtResource( 2 )
 transform/pos = Vector2( 78.4572, 462.002 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
+script/script = ExtResource( 4 )
+debug = true
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 18.0
+margin/top = 27.0
+margin/right = 278.0
+margin/bottom = 41.0
+custom_colors/font_color = Color( 1, 0.914398, 0.00390625, 1 )
+text = "Presionar D para ctivar o desactivar debug"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 18.0
+margin/top = 50.0
+margin/right = 286.0
+margin/bottom = 64.0
+custom_colors/font_color = Color( 1, 0.914398, 0.00390625, 1 )
+text = "Debug Label"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
